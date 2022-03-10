@@ -5,19 +5,19 @@ import api from '../../services/api'
 
 import { Container } from './styles'
 
-interface Food {
+interface FoodData {
   id: number
   name: string
   description: string
-  price: string
+  price: number
   available: boolean
   image: string
 }
 
 interface FoodProps {
-  food: Food
-  handleEditFood: (food: Food) => void
-  handleDelete: (id: number) => void
+  food: FoodData
+  handleEditFood: (food: FoodData) => void
+  handleDelete: (id: number) => Promise<void>
 }
 
 function Food({ food, handleEditFood, handleDelete }: FoodProps) {
